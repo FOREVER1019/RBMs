@@ -19,16 +19,14 @@ Previous raster-based modeling attempts to calculate accessibility could bring c
 
 The RBMs aims to calculate the accessibility estimation error of the 35 RBMs in 215 urban road networks worldwide; test the robustness of the OLC-RBM and the TMS-RBM to changes in the cell configuration, traffic condition, accessibility index and area size; calculate the accessibility estimation error of the OLC-RBM and the TMS-RBM in accurately mapping the multimodal accessibility to healthcare facilities in China, estimating the car-metro multimodal accessibility under peak traffic conditions in Wuhan, as well as precisely estimate the post-disaster transportation accessibility of an earthquake-prone city.
 
-Unfortunately, some data (the Chinese road network, friction_surface_2015_v1.0, GHS_POP_E2015_GLOBE_R2019A_4326_30ss_V1_0) are too large to be hosted here, and all source data are bigger than 34G. We then put all source data in a Cloud Disk,  https://pan.baidu.com/s/1uj6AAtiuvsizR6L-oJmSjg  (the access code is: cicr).
 
 # System Requirements
 
 ## Hardware Requirements
 
-The RBMs requires a high-performance computer with large RAM to support the operations defines by a user. For minimal performance, this will be a computer with about 96 GB of RAM. For optimal performance, we recommend a computer with the following specs:
+When applying the RBMs in accessibility estimation of urban road networks, a normal laptap (for example, RAM: 16.0 GB; CPU: 8 cores, 3.20 GHz/core) is enough.
 
-RAM: 96+ GB  
-CPU: 56+ cores, 2.6+ GHz/core
+When applying the RBMs in accessibility estimation of Chinese road network, a high-performance computer with large RAM is required, and we recommend a computer with the following specs, RAM: 96+ GB; CPU: 56+ cores, 2.6+ GHz/core
 
 ## Software Requirements
 
@@ -49,7 +47,7 @@ Before setting up the RBMs, users should have Matlab version R2017a or higher.
 
 (3)	Download RBMs.
 
-(4) Download 'China_data', 'friction_surface_2015_v1.0', 'GHS_POP_E2015_GLOBE_R2019A_4326_30ss_V1_0' from the cloud disk. And put the avove three folders in RBMs.
+(4) Download 'China_data', 'friction_surface_2015_v1.0', 'GHS_POP_E2015_GLOBE_R2019A_4326_30ss_V1_0' from the paper “A Method for Rasterizing Transportation Networks to Support Sustainability Decision-Making”. And put the avove three folders in RBMs.
 
 The installation process can take as long as 30 minutes depending on your laptop model
 
@@ -103,7 +101,7 @@ S6: Run ‘main_calculation_integrated_accessibility_Wuhan’ to get the accessi
 S7: Run ‘main_calculate_error_time_in_China’ to get the accessibility estimation error for OLC-RBM and TMS-RBM in assessing healthcare accessibility in China
 
 
-# Pseudocode
+# Implementation procedures
 
 Pseudocode of calculating the accessibility estimation error for 35 RBMs：
 
