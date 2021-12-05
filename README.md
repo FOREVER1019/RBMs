@@ -46,7 +46,7 @@ Before setting up the RBMs, users should have Matlab version R2017a or higher.
 
 (2)	Download matlab.bgl, and add this folder to the Matlab search path.
 
-(3)	Download RMSs.
+(3)	Download RBMs.
 
 The installation process can take as long as 30 minutes depending on your laptop model
 
