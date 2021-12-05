@@ -48,6 +48,8 @@ Before setting up the RBMs, users should have Matlab version R2017a or higher.
 
 (3)	Download RBMs.
 
+(4) Download 'China_data', 'friction_surface_2015_v1.0', 'GHS_POP_E2015_GLOBE_R2019A_4326_30ss_V1_0' from the paper “A Method for Rasterizing Transportation Networks to Support”. And put the avove three folders in RBMs.
+
 The installation process can take as long as 30 minutes depending on your laptop model
 
 
