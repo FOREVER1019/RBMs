@@ -10,6 +10,7 @@
 - [Installation Guide](#installation-guide)
 - [Demo](#demo)
 - [Instructions for use](#instructions-for-use)
+- [Pseudocode](#Pseudocode)
 
 
 # Overview
@@ -100,6 +101,35 @@ S5: Run ‘main_calculation_population_proportion_under_earthqueke_Qujing’ to 
 S6: Run ‘main_calculation_integrated_accessibility_Wuhan’ to get the accessibility estimation error for OLC-RBM and TMS-RBM in Wuhan integrated_car_metro system
 
 S7: Run ‘main_calculate_error_time_in_China’ to get the accessibility estimation error for OLC-RBM and TMS-RBM in assessing healthcare accessibility in China
+
+
+# Pseudocode
+
+Pseudocode of calculating the accessibility estimation error for 35 RBMs：
+
+1: Input city_id and filename
+
+2: Generate raster network, compute and save net_raster_info and area_raster_info
+
+3: Compute travel time-based accessibility derived from the VBM, save it as net_r2r
+
+4: Compute the average accessibility derived from the VBM, save it as aver_acc
+
+5: Compute node betweenness for all road nodes, save it as Bn
+
+6: Compute 16 types of representative nodes for the LC&RN-RBM, save it as raster_typical_nodes_LC_RN
+
+7: Compute 16 types of representative nodes for the NN&RN-RBM, save it as raster_typical_nodes_NN_RN
+
+8: Get local transportation network information for all raster, save it as node_pair
+
+9: Calculate accessibility estimation error for the LC&RN-RBM, save it as rs1_error_time_LC_RN, and rs1_error_time_LC_RN_rand
+
+10: Calculate accessibility estimation error for the NN&RN-RBM, save it as rs1_error_time_NN_RN, and rs1_error_time_NN_RN_rand
+
+11: Calculate accessibility estimation error for the LC&MS-RBM, save it as rs1_error_time_LC_MS
+
+12: Calculate accessibility estimation error for the TMS-RBM, save it as rs1_error_time_TMS
 
 
 
