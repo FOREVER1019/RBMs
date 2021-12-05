@@ -16,9 +16,9 @@
 
 Previous raster-based modeling attempts to calculate accessibility could bring considerable inaccuracies, with an average error of 23.81% for travel time-based accessibility estimation of 215 urban road networks worldwide and a 65.14% error in post-disaster accessibility assessment of an earthquake-prone city. Here we propose a transportation network rasterization model for remarkably accurate accessibility assessment. Its high accuracy and robustness, as demonstrated by an empirical analysis of urban road networks, a theoretical analysis of lattices and simulations of random planar graphs, are a consequence of its novel local connection mechanism in combination with the hierarchical structure and edge density range of real networks. Successful applications in accurately mapping large-scale multimodal accessibility at a national scale and assessing post-earthquake accessibility demonstrate its utility to support many sustainability-related research and policy needs.
 
-The code set ‘RBMs’ aims to calculate the accessibility estimation error of the 35 RBMs in 215 urban road networks worldwide; test the robustness of the OLC-RBM and the TMS-RBM to changes in the cell configuration, traffic condition, accessibility index and area size; calculate the accessibility estimation error of the OLC-RBM and the TMS-RBM in accurately mapping the multimodal accessibility to healthcare facilities in China, estimating the car-metro multimodal accessibility under peak traffic conditions in Wuhan, as well as precisely estimate the post-disaster transportation accessibility of an earthquake-prone city.
+The RBMs aims to calculate the accessibility estimation error of the 35 RBMs in 215 urban road networks worldwide; test the robustness of the OLC-RBM and the TMS-RBM to changes in the cell configuration, traffic condition, accessibility index and area size; calculate the accessibility estimation error of the OLC-RBM and the TMS-RBM in accurately mapping the multimodal accessibility to healthcare facilities in China, estimating the car-metro multimodal accessibility under peak traffic conditions in Wuhan, as well as precisely estimate the post-disaster transportation accessibility of an earthquake-prone city.
 
-
+Unfortunately, some data (specially the Chinese road network) are too large to be hosted here. We have put all data in the paper “A Method for Rasterizing Transportation Networks to Support”
 
 # System Requirements
 
@@ -60,7 +60,7 @@ Set city_id=178, run ‘main_calculate_error_time_for_35_RBMs’ to get the acce
 
 ## Expected output
 
-rs1_error_time_TMS: the accessibility estimation error for TMS -RBM (ID=1);
+rs1_error_time_TMS: the accessibility estimation error for TMS-RBM (ID=1);
 
 rs1_error_time_LC_MS: the accessibility estimation error for LC&MS-RBM (ID=2);
 
@@ -75,6 +75,7 @@ rs1_error_time_LC_RN_rand: the accessibility estimation error for LC&RN-RBM with
 rs1_error_time_HB: the accessibility estimation error for HB-RBM.
 
 
+Detailed information of these 35 RBMs are provided in the paper “A Method for Rasterizing Transportation Networks to Support”. 
 Note that the estimation error for all NN&RN-RBMs and LC&RN-RBMs may change slightly at different run, as the representative nodes are randomly selected from the nodes that meet the requirements.
 
 
