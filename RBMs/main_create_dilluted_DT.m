@@ -16,9 +16,10 @@ N=10000;Numsim=1;
 % DT_edge_save£ºthe edge left after the edge is deleted
 
 %% generate 100 types of DT networks with a number of 10,000 nodes and an edge density from 0.33:0.01:1
-mkdir(strcat('./DT10000/S',num2str(sim)));
 for sim=1:Numsim
     sim
+    mkdir(strcat('./DT10000/S',num2str(sim)));
+
     [DT_node,DT_edge]=create_DT([],N,bounding_box,2); % randomly generate nodes within the bounding_box
     % [DT_node,DT_edge]=create_DT(node_data,[],[],1); % keep the position of the road network node i
     DT_edge=[(1:length(DT_edge(:,1)))' DT_edge];
