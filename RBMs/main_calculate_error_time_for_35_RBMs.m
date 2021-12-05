@@ -84,11 +84,11 @@ raster_typical_nodes(:,7)=get_representative_nodes(raster_node,node_raster,[-nod
 raster_typical_nodes(:,8)=get_representative_nodes(raster_node,node_raster,[-node_type node_local_dist(:,2)],2); % PS&GD
 raster_typical_nodes(:,9)=get_representative_nodes(raster_node,node_raster,[-node_type node_local_dist(:,3)],2); % PS&ND
 raster_typical_nodes(:,10)=get_representative_nodes(raster_node,node_raster,[-node_type -node_local_betweenness(:,1)],2); % PS&LB
-raster_typical_nodes(:,11)=get_representative_nodes(raster_node,node_raster,[-node_type -node_street_len(:,1)],2); % PS&SL
-raster_typical_nodes(:,12)=get_representative_nodes(raster_node,node_raster,[-node_street_len(:,1) node_local_dist(:,1)],2); % SL&CC
-raster_typical_nodes(:,13)=get_representative_nodes(raster_node,node_raster,[-node_street_len(:,1) node_local_dist(:,2)],2); % SL&GD
-raster_typical_nodes(:,14)=get_representative_nodes(raster_node,node_raster,[-node_street_len(:,1) node_local_dist(:,3)],2); % SL&ND
-raster_typical_nodes(:,15)=get_representative_nodes(raster_node,node_raster,[-node_street_len(:,1) -node_local_betweenness(:,1)],2); % SL&LB
+raster_typical_nodes(:,11)=get_representative_nodes(raster_node,node_raster,[-node_street_len(:,1) node_local_dist(:,1)],2); % SL&CC
+raster_typical_nodes(:,12)=get_representative_nodes(raster_node,node_raster,[-node_street_len(:,1) node_local_dist(:,2)],2); % SL&GD
+raster_typical_nodes(:,13)=get_representative_nodes(raster_node,node_raster,[-node_street_len(:,1) node_local_dist(:,3)],2); % SL&ND
+raster_typical_nodes(:,14)=get_representative_nodes(raster_node,node_raster,[-node_street_len(:,1) -node_local_betweenness(:,1)],2); % SL&LB
+raster_typical_nodes(:,15)=get_representative_nodes(raster_node,node_raster,[-node_type -node_street_len(:,1)],2); % PS&SL
 rand_typical_nodes=zeros(length(raster_node(:,1)),100); %R
 for sim=1:100
     for c=1:length(raster_node(:,1))
@@ -122,11 +122,11 @@ raster_typical_nodes(:,7)=get_representative_nodes(raster_data,node_raster,[-nod
 raster_typical_nodes(:,8)=get_representative_nodes(raster_data,node_raster,[-node_type node_local_dist(:,2)],2); % PS&GD
 raster_typical_nodes(:,9)=get_representative_nodes(raster_data,node_raster,[-node_type node_local_dist(:,3)],2); % PS&ND
 raster_typical_nodes(:,10)=get_representative_nodes(raster_data,node_raster,[-node_type -node_local_betweenness(:,1)],2); % PS&LB
-raster_typical_nodes(:,11)=get_representative_nodes(raster_data,node_raster,[-node_type -node_street_len(:,1)],2); % PS&SL
-raster_typical_nodes(:,12)=get_representative_nodes(raster_data,node_raster,[-node_street_len(:,1) node_local_dist(:,1)],2); % SL&CC
-raster_typical_nodes(:,13)=get_representative_nodes(raster_data,node_raster,[-node_street_len(:,1) node_local_dist(:,2)],2); % SL&GD
-raster_typical_nodes(:,14)=get_representative_nodes(raster_data,node_raster,[-node_street_len(:,1) node_local_dist(:,3)],2); % SL&ND
-raster_typical_nodes(:,15)=get_representative_nodes(raster_data,node_raster,[-node_street_len(:,1) -node_local_betweenness(:,1)],2); % SL&LB
+raster_typical_nodes(:,11)=get_representative_nodes(raster_data,node_raster,[-node_street_len(:,1) node_local_dist(:,1)],2); % SL&CC
+raster_typical_nodes(:,12)=get_representative_nodes(raster_data,node_raster,[-node_street_len(:,1) node_local_dist(:,2)],2); % SL&GD
+raster_typical_nodes(:,13)=get_representative_nodes(raster_data,node_raster,[-node_street_len(:,1) node_local_dist(:,3)],2); % SL&ND
+raster_typical_nodes(:,14)=get_representative_nodes(raster_data,node_raster,[-node_street_len(:,1) -node_local_betweenness(:,1)],2); % SL&LB
+raster_typical_nodes(:,15)=get_representative_nodes(raster_data,node_raster,[-node_type -node_street_len(:,1)],2); % PS&SL
 rand_typical_nodes=zeros(length(raster_data(:,1)),100); %R
 for sim=1:100
     for c=1:length(raster_data(:,1))
@@ -153,7 +153,7 @@ load(strcat(filename,'\rs1_node_pair_time.mat'),'node_pair');
 err_time=zeros(length(raster_typical_nodes(1,:)),9);
 for t=1:length(raster_typical_nodes(1,:))
     [err_time(t,:),net_r2r_LC_RN]=calculate_accessibility_error_for_LC_RN(net_raster_info,node_data,edge_data,net_r2r,raster_typical_nodes(:,t),node_pair);
-    if t==11  % OLC-RBM
+    if t==15  % OLC-RBM
         save(strcat(filename,'\rs1_net_r2r_LC_RN.mat'),'net_r2r_LC_RN');
     end
 end
