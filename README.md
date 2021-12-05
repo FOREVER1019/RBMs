@@ -1,4 +1,4 @@
-# xxxx (the name of this package)
+# RBMs
 
 
 
@@ -6,28 +6,25 @@
 ## Contents
 
 - [Overview](#overview)
-- [Repo Contents](#repo-contents)
 - [System Requirements](#system-requirements)
 - [Installation Guide](#installation-guide)
 - [Demo](#demo)
-- [Results](#results)
-- [License](./LICENSE)
-- [Issues](https://github.com/ebridge2/lol/issues)
-- [Citation](#citation)
+- [Instructions for use](#instructions-for-use)
+
 
 # Overview
 
-xxxx.
+Previous raster-based modeling attempts to calculate accessibility could bring considerable inaccuracies, with an average error of 23.81% for travel time-based accessibility estimation of 215 urban road networks worldwide and a 65.14% error in post-disaster accessibility assessment of an earthquake-prone city. Here we propose a transportation network rasterization model for remarkably accurate accessibility assessment. Its high accuracy and robustness, as demonstrated by an empirical analysis of urban road networks, a theoretical analysis of lattices and simulations of random planar graphs, are a consequence of its novel local connection mechanism in combination with the hierarchical structure and edge density range of real networks. Successful applications in accurately mapping large-scale multimodal accessibility at a national scale and assessing post-earthquake accessibility demonstrate its utility to support many sustainability-related research and policy needs.
 
-# Repo Contents
+The code set ‘RBMs’ aims to calculate the accessibility estimation error of the 35 RBMs in 215 urban road networks worldwide; test the robustness of the OLC-RBM and the TMS-RBM to changes in the cell configuration, traffic condition, accessibility index and area size; calculate the accessibility estimation error of the OLC-RBM and the TMS-RBM in accurately mapping the multimodal accessibility to healthcare facilities in China, estimating the car-metro multimodal accessibility under peak traffic conditions in Wuhan, as well as precisely estimate the post-disaster transportation accessibility of an earthquake-prone city.
 
-- [xxx](./xxx): xxxxx
+
 
 # System Requirements
 
 ## Hardware Requirements
 
-The xxx package requires a high-performance computer with large RAM to support the operations defines by a user. For minimal performance, this will be a computer with about X GB of RAM. For optimal performance, we recommend a computer with the following specs:
+The RBMs requires a high-performance computer with large RAM to support the operations defines by a user. For minimal performance, this will be a computer with about X GB of RAM. For optimal performance, we recommend a computer with the following specs:
 
 RAM: 96+ GB  
 CPU: 56+ cores, 2.6+ GHz/core
@@ -40,92 +37,66 @@ The package development version is tested on *Windows* operating systems. The de
 
 Windows: Windows Server 2012 R2 Standard 
 
-Before setting up the xxx package, users should have Matlab version R2017a or higher.
+Before setting up the RBMs, users should have Matlab version R2017a or higher.
 
 
 # Installation Guide
 
-## Stable Release
+(1)	Install Matlab version R2017a or higher.
 
-`lolR` is available in a stable release on CRAN:
+(2)	Download matlab.bgl, and add this folder to the Matlab search path.
 
-```
-install.packages('lolR')
-```
+(3)	Download RMSs.
 
-## Development Version
+The installation process can take as long as 30 minutes depending on your laptop model
 
-### Package dependencies
-
-Users should install the following packages prior to installing `lolR`, from an `R` terminal:
-
-```
-install.packages(c('ggplot2', 'abind', 'irlba', 'knitr', 'rmarkdown', 'latex2exp', 'MASS', 'randomForest'))
-```
-
-which will install in about 30 seconds on a machine with the recommended specs.
-
-The `lolR` package functions with all packages in their latest versions as they appear on `CRAN` on December 13, 2017. Users can check [CRAN snapshot](https://mran.microsoft.com/timemachine/) for details. The versions of software are, specifically:
-```
-abind_1.4-5
-latex2exp_0.4.0
-ggplot2_2.2.1
-irlba_2.3.1
-Matrix_1.2-3
-MASS_7.3-47
-randomForest_4.6-12
-```
-
-If you are having an issue that you believe to be tied to software versioning issues, please drop us an [Issue](https://github.com/neurodata/lol/issues). 
-
-### Package Installation
-
-From an `R` session, type:
-
-```
-require(devtools)
-install_github('neurodata/lol', build_vignettes=TRUE, force=TRUE)  # install lol with the vignettes
-require(lolR)
-vignette("lol", package="lolR")  # view one of the basic vignettes
-```
-
-The package should take approximately 40 seconds to install with vignettes on a recommended computer. 
 
 # Demo
 
-## Functions
+## Instructions to run on data
 
-For interactive demos of the functions, please check out the vignettes built into the package. They can be accessed as follows:
+Set city_id=178, run ‘main_calculate_error_time_for_35_RBMs’ to get the accessibility estimation error for 35 RBM in assessing travel time-based accessibility
+ 
 
-```
-require(lolR)
-vignette('lol')
-vignette('pca')
-vignette('cpca')
-vignette('lrcca')
-vignette('mdp')
-vignette('xval')
-vignette('qoq')
-vignette('simulations')
-vignette('nearestCentroid')
-```
+## Expected output
 
-## Extending the lolR Package
+rs1_error_time_TMS: the accessibility estimation error for TMS -RBM (ID=1);
 
-The lolR package makes many useful resources available (such as embedding and cross-validation) for simple extension. 
+rs1_error_time_LC_MS: the accessibility estimation error for LC&MS-RBM (ID=2);
 
-To extend the lolR package, check out the vignettes:
+rs1_error_time_NN_RN_rand: the accessibility estimation error for NN&RN-RBM with randomly selected representative nodes (ID=3);
 
-```
-require(lolR)
-vignette('extend_embedding')
-vignette('extend_classification')
-```
+rs1_error_time_NN_RN: the accessibility estimation error for 15 NN&RN-RBM (ID=4:18);
 
-# Results
+rs1_error_time_LC_RN: the accessibility estimation error for 15 LC&RN-RBM (ID=19);
 
-In this [benchmark comparison](http://docs.neurodata.io/lol/lol-paper/figures/real_data.html), we show that LOL does better than all linear embedding techniques in supervised HDLSS settings when dimensionality is high (d > 100, ntrain <= d) on 20 benchmark problems from the [UCI](https://archive.ics.uci.edu/ml/index.php) and [PMLB](https://github.com/EpistasisLab/penn-ml-benchmarks) datasets. LOL provides a good tradeoff between maintaining the class conditional difference (good misclassification rate) in a small number of dimensions (low number of embedding dimensions).
+rs1_error_time_LC_RN_rand: the accessibility estimation error for LC&RN-RBM with randomly selected representative nodes (ID=20:34);
 
-# Citation
+rs1_error_time_HB: the accessibility estimation error for HB-RBM.
 
-For usage of the package and associated manuscript, please cite according to the enclosed [citation.bib](./citation.bib).
+
+Note that the estimation error for all NN&RN-RBMs and LC&RN-RBMs may change slightly at different run, as the representative nodes are randomly selected from the nodes that meet the requirements.
+
+
+## Expected run time for demo on a "normal" desktop computer
+This demo can take as long as 10 minutes depending on your laptop model
+
+
+# Instructions for use
+
+S1: For a given city, run ‘main_calculate_error_time_for_35_RBMs’ to get the accessibility estimation error for 35 RBM in assessing travel time-based accessibility
+
+S2: For a given city, run ‘main_calculate_error_dist_for_35_RBMs’ to get the accessibility estimation error for 35 RBM in assessing travel distance-based accessibility 
+
+S3: For a given city, run ‘main_robust_test_for_OLCRBM_TMSRBM’ to get the accessibility estimation error for OLC-RBM and TMS-RBM under different raster sizes, raster centers, road speeds and regional scales
+
+S4: Run ‘main_create_dilluted_DT’ to get random graphs with different edge densities; modify the folder name (filename) as the path of the random graph, and run ‘main_calculate_error_time_for_35_RBMs’ to get the accessibility estimation error for 35 RBMs
+
+S5: Run ‘main_calculation_population_proportion_under_earthqueke_Qujing’ to get the accessibility estimation error for OLC-RBM and TMS-RBM in Qujing under earthquake
+
+S6: Run ‘main_calculation_integrated_accessibility_Wuhan’ to get the accessibility estimation error for OLC-RBM and TMS-RBM in Wuhan integrated_car_metro system
+
+S7: Run ‘main_calculate_error_time_in_China’ to get the accessibility estimation error for OLC-RBM and TMS-RBM in assessing healthcare accessibility in China
+
+
+
