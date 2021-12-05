@@ -18,7 +18,7 @@ Previous raster-based modeling attempts to calculate accessibility could bring c
 
 The RBMs aims to calculate the accessibility estimation error of the 35 RBMs in 215 urban road networks worldwide; test the robustness of the OLC-RBM and the TMS-RBM to changes in the cell configuration, traffic condition, accessibility index and area size; calculate the accessibility estimation error of the OLC-RBM and the TMS-RBM in accurately mapping the multimodal accessibility to healthcare facilities in China, estimating the car-metro multimodal accessibility under peak traffic conditions in Wuhan, as well as precisely estimate the post-disaster transportation accessibility of an earthquake-prone city.
 
-Unfortunately, some data (specially the Chinese road network) are too large to be hosted here. We have put all data in the paper “A Method for Rasterizing Transportation Networks to Support”
+Unfortunately, some data (the Chinese road network, friction_surface_2015_v1.0, GHS_POP_E2015_GLOBE_R2019A_4326_30ss_V1_0) are too large to be hosted here. We have put all data in the paper “A Method for Rasterizing Transportation Networks to Support”
 
 # System Requirements
 
