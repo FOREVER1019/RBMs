@@ -19,7 +19,7 @@ Previous raster-based modeling attempts to calculate accessibility could bring c
 
 The RBMs aims to calculate the accessibility estimation error of the 35 RBMs in 215 urban road networks worldwide; test the robustness of the OLC-RBM and the TMS-RBM to changes in the cell configuration, traffic condition, accessibility index and area size; calculate the accessibility estimation error of the OLC-RBM and the TMS-RBM in accurately mapping the multimodal accessibility to healthcare facilities in China, estimating the car-metro multimodal accessibility under peak traffic conditions in Wuhan, as well as precisely estimate the post-disaster transportation accessibility of an earthquake-prone city.
 
-Unfortunately, some data (the Chinese road network, friction_surface_2015_v1.0, GHS_POP_E2015_GLOBE_R2019A_4326_30ss_V1_0) are too large to be hosted here. We have put all data in the paper “A Method for Rasterizing Transportation Networks to Support”
+Unfortunately, some data (the Chinese road network, friction_surface_2015_v1.0, GHS_POP_E2015_GLOBE_R2019A_4326_30ss_V1_0) are too large to be hosted here, and all source data are bigger than 34G. We then put all source data in a Cloud Disk,  https://pan.baidu.com/s/1uj6AAtiuvsizR6L-oJmSjg  (the access code is: cicr).
 
 # System Requirements
 
@@ -49,7 +49,7 @@ Before setting up the RBMs, users should have Matlab version R2017a or higher.
 
 (3)	Download RBMs.
 
-(4) Download 'China_data', 'friction_surface_2015_v1.0', 'GHS_POP_E2015_GLOBE_R2019A_4326_30ss_V1_0' from the paper “A Method for Rasterizing Transportation Networks to Support”. And put the avove three folders in RBMs.
+(4) Download 'China_data', 'friction_surface_2015_v1.0', 'GHS_POP_E2015_GLOBE_R2019A_4326_30ss_V1_0' from the cloud disk. And put the avove three folders in RBMs.
 
 The installation process can take as long as 30 minutes depending on your laptop model
 
@@ -78,7 +78,7 @@ rs1_error_time_LC_RN_rand: the accessibility estimation error for LC&RN-RBM with
 rs1_error_time_HB: the accessibility estimation error for HB-RBM.
 
 
-Detailed information of these 35 RBMs are provided in the paper “A Method for Rasterizing Transportation Networks to Support”. 
+Detailed information of these 35 RBMs are provided in the paper “A Method for Rasterizing Transportation Networks to Support Sustainability Decision-Making”. 
 Note that the estimation error for all NN&RN-RBMs and LC&RN-RBMs may change slightly at different run, as the representative nodes are randomly selected from the nodes that meet the requirements.
 
 
