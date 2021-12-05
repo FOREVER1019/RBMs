@@ -24,7 +24,7 @@ The code set ‘RBMs’ aims to calculate the accessibility estimation error of 
 
 ## Hardware Requirements
 
-The RBMs requires a high-performance computer with large RAM to support the operations defines by a user. For minimal performance, this will be a computer with about X GB of RAM. For optimal performance, we recommend a computer with the following specs:
+The RBMs requires a high-performance computer with large RAM to support the operations defines by a user. For minimal performance, this will be a computer with about 96 GB of RAM. For optimal performance, we recommend a computer with the following specs:
 
 RAM: 96+ GB  
 CPU: 56+ cores, 2.6+ GHz/core
